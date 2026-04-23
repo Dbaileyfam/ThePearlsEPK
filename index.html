@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Electronic Press Kit — The Pearls</title>
+  <meta name="description" content="The Pearls — genre-bending indie and alternative rock from Casper, Wyoming. EPK for press and booking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sand: #fff8ee;
+      --foam: #e8f6f4;
+      --sea: #0f766e;
+      --sea-deep: #0d4f4a;
+      --coral: #fb7185;
+      --sun: #fbbf24;
+      --ink: #134e4a;
+      --white: #ffffff;
+      --shadow: rgba(13, 79, 74, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Nunito", system-ui, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 80% at 50% -20%, rgba(251, 191, 36, 0.35), transparent 50%),
+        radial-gradient(80% 50% at 100% 0%, rgba(251, 113, 133, 0.12), transparent 45%),
+        linear-gradient(180deg, var(--sand) 0%, var(--foam) 35%, #dff4f0 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--sea);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--sea-deep);
+    }
+
+    .wrap {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    header.site {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 248, 238, 0.88);
+      border-bottom: 1px solid rgba(15, 118, 110, 0.12);
+    }
+
+    header.site .inner {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 0.65rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .brand {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+      color: var(--sea-deep);
+    }
+
+    .brand span {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--coral);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--sea-deep);
+      padding: 0.35rem 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover {
+      border-bottom-color: var(--sun);
+      color: var(--sea);
+    }
+
+    .wave {
+      display: block;
+      width: 100%;
+      height: 48px;
+      margin: 0;
+      color: rgba(15, 118, 110, 0.08);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2.5rem 0 1rem;
+    }
+
+    .hero h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(2.25rem, 6vw, 3.25rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--sea-deep);
+      margin: 0 0 0.5rem;
+      line-height: 1.1;
+    }
+
+    .hero .tag {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--sea);
+      max-width: 36rem;
+      margin: 0 auto 1rem;
+    }
+
+    .hero .lede {
+      max-width: 38rem;
+      margin: 0 auto;
+      opacity: 0.92;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: var(--white);
+      color: var(--sea-deep);
+      border: 1px solid rgba(15, 118, 110, 0.2);
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    section {
+      margin-top: 2.5rem;
+    }
+
+    section h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.65rem;
+      color: var(--sea-deep);
+      margin: 0 0 1rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 3px solid var(--sun);
+      display: inline-block;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.35rem;
+      box-shadow: 0 8px 32px var(--shadow);
+      border: 1px solid rgba(15, 118, 110, 0.1);
+    }
+
+    .video-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .video-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .video-box {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 1rem;
+      background: var(--sea-deep);
+      box-shadow: 0 6px 24px var(--shadow);
+    }
+
+    .video-box iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-note {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .press ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .press li {
+      margin-bottom: 0.35rem;
+    }
+
+    .booking .email {
+      font-size: 1.15rem;
+      font-weight: 700;
+      word-break: break-all;
+    }
+
+    .social {
+      margin-top: 1rem;
+    }
+
+    .social a {
+      display: inline-block;
+      margin-right: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--sea), var(--sea-deep));
+      color: var(--white) !important;
+      box-shadow: 0 4px 14px rgba(15, 118, 110, 0.35);
+    }
+
+    .social a:hover {
+      filter: brightness(1.08);
+      color: var(--white) !important;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px dashed rgba(15, 118, 110, 0.25);
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--sea);
+    }
+
+    footer a {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <div class="brand">The <span>Pearls</span></div>
+      <nav aria-label="EPK sections">
+        <ul>
+          <li><a href="#bio">Bio</a></li>
+          <li><a href="#video">Video</a></li>
+          <li><a href="#press">Press</a></li>
+          <li><a href="#booking">Booking</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z"/>
+  </svg>
+
+  <main class="wrap">
+    <div class="hero">
+      <h1>Electronic Press Kit</h1>
+      <p class="tag">The Pearls — Casper, WY · indie to alt-rock · good vibes, big energy</p>
+      <p class="lede">A genre-bending crew with a surfer’s sense of space and a rock show’s pulse: love, sadness, passion, and straight-up fun — played all over Wyoming and built for rooms that want to move.</p>
+      <div class="pill-row">
+        <span class="pill">Casper roots</span>
+        <span class="pill">Wyoming shows</span>
+        <span class="pill">Indie → alt rock</span>
+      </div>
+    </div>
+
+    <section id="bio">
+      <h2>Bio</h2>
+      <div class="card">
+        <p><strong>The Pearls</strong> are a genre-bending group from <strong>Casper, Wyoming</strong>, pulling from a wide mix of influences. Their songs drift from <strong>indie</strong> to <strong>alternative rock</strong>, with sets that ride through love, sadness, passion, and pure energy — engaging for anyone and an all-around good time.</p>
+        <p>They have played <strong>all over Wyoming</strong>, from hometown rooms to stages that feel like the last warm night of summer.</p>
+      </div>
+    </section>
+
+    <section id="video">
+      <h2>Video</h2>
+      <p>Official and live clips — watch below or open any video on YouTube from the player menu.</p>
+      <div class="video-grid">
+        <div>
+          <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/6CoWeKczdz4" title="The Pearls on YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="video-note">Performance clip</p>
+        </div>
+        <div>
+          <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/KWjLqZTnXQI" title="The Pearls on YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="video-note">Performance clip</p>
+        </div>
+        <div style="grid-column: 1 / -1; max-width: 100%;">
+          <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/GS6mLxJvxc8" title="The Pearls on YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <p class="video-note">Performance clip</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="press">
+      <h2>Press photos</h2>
+      <div class="card press">
+        <p>High-resolution images for print and web are available on request. Open or save from the browser once files are hosted in this repo under <code>assets/press/</code> (add your shots there and link them here).</p>
+        <ul>
+          <li>Band live / hero</li>
+          <li>Individual members (optional)</li>
+          <li>Logos and wordmarks (optional)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="booking">
+      <h2>Booking &amp; press</h2>
+      <div class="card booking">
+        <p>Shows, private events, festivals, and press inquiries:</p>
+        <p class="email"><a href="mailto:therealpearls01@gmail.com">therealpearls01@gmail.com</a></p>
+        <div class="social">
+          <a href="https://instagram.com/onlythepearls" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="y"></span> The Pearls · Casper, Wyoming</p>
+      <p><a href="https://github.com/Dbaileyfam/ThePearlsEPK">Site repo on GitHub</a> — deploy with GitHub Pages from the <code>main</code> branch.</p>
+    </footer>
+  </main>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
