@@ -35,11 +35,73 @@
       font-size: 1.05rem;
       line-height: 1.65;
       color: var(--ink);
-      background:
-        radial-gradient(120% 80% at 50% -20%, rgba(251, 191, 36, 0.35), transparent 50%),
-        radial-gradient(80% 50% at 100% 0%, rgba(251, 113, 133, 0.12), transparent 45%),
-        linear-gradient(180deg, var(--sand) 0%, var(--foam) 35%, #dff4f0 100%);
+      background: #0c2a28;
       min-height: 100vh;
+      position: relative;
+    }
+
+    /* Full-page art layer (similar idea to Dub Nectar EPK: fixed cover + overlay) */
+    .epk-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .epk-bg-slide {
+      position: absolute;
+      inset: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0;
+      animation: epk-bg-fade 24s ease-in-out infinite;
+      will-change: opacity;
+    }
+
+    .epk-bg-slide:nth-child(1) {
+      background-image: url("assets/pearlsbg1.png");
+      animation-delay: 0s;
+    }
+
+    .epk-bg-slide:nth-child(2) {
+      background-image: url("assets/pearlsbg2.png");
+      animation-delay: -8s;
+    }
+
+    .epk-bg-slide:nth-child(3) {
+      background-image: url("assets/pearlsbg3.png");
+      animation-delay: -16s;
+    }
+
+    @keyframes epk-bg-fade {
+      0% { opacity: 0; }
+      4% { opacity: 1; }
+      29% { opacity: 1; }
+      33% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .epk-bg-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(255, 248, 238, 0.52) 0%, rgba(232, 246, 244, 0.38) 45%, rgba(12, 42, 40, 0.5) 100%),
+        radial-gradient(ellipse 90% 55% at 50% 0%, rgba(251, 191, 36, 0.18), transparent 55%);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .epk-bg-slide {
+        animation: none;
+        opacity: 0;
+      }
+
+      .epk-bg-slide:nth-child(1) {
+        opacity: 1;
+      }
     }
 
     a {
@@ -56,15 +118,18 @@
       max-width: 52rem;
       margin: 0 auto;
       padding: 0 1.25rem 4rem;
+      position: relative;
+      z-index: 2;
     }
 
     header.site {
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(12px);
-      background: rgba(255, 248, 238, 0.88);
-      border-bottom: 1px solid rgba(15, 118, 110, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(255, 248, 238, 0.78);
+      border-bottom: 1px solid rgba(15, 118, 110, 0.15);
     }
 
     header.site .inner {
@@ -115,14 +180,6 @@
       color: var(--sea);
     }
 
-    .wave {
-      display: block;
-      width: 100%;
-      height: 48px;
-      margin: 0;
-      color: rgba(15, 118, 110, 0.08);
-    }
-
     .hero {
       text-align: center;
       padding: 2.5rem 0 1rem;
@@ -136,20 +193,23 @@
       color: var(--sea-deep);
       margin: 0 0 0.5rem;
       line-height: 1.1;
+      text-shadow: 0 1px 0 rgba(255, 248, 238, 0.9), 0 0 24px rgba(255, 248, 238, 0.65);
     }
 
     .hero .tag {
       font-size: 1.15rem;
       font-weight: 600;
-      color: var(--sea);
+      color: var(--sea-deep);
       max-width: 36rem;
       margin: 0 auto 1rem;
+      text-shadow: 0 0 18px rgba(255, 248, 238, 0.85);
     }
 
     .hero .lede {
       max-width: 38rem;
       margin: 0 auto;
-      opacity: 0.92;
+      opacity: 0.96;
+      text-shadow: 0 0 14px rgba(255, 248, 238, 0.75);
     }
 
     .pill-row {
@@ -184,14 +244,26 @@
       padding-bottom: 0.35rem;
       border-bottom: 3px solid var(--sun);
       display: inline-block;
+      text-shadow: 0 0 12px rgba(255, 248, 238, 0.7);
+    }
+
+    .section-intro {
+      margin: 0 0 1rem;
+      padding: 0.65rem 1rem;
+      border-radius: 0.85rem;
+      background: rgba(255, 248, 238, 0.82);
+      border: 1px solid rgba(15, 118, 110, 0.12);
+      box-shadow: 0 4px 20px var(--shadow);
     }
 
     .card {
-      background: var(--white);
+      background: rgba(255, 255, 255, 0.94);
       border-radius: 1.25rem;
       padding: 1.5rem 1.35rem;
       box-shadow: 0 8px 32px var(--shadow);
-      border: 1px solid rgba(15, 118, 110, 0.1);
+      border: 1px solid rgba(15, 118, 110, 0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     .video-grid {
@@ -227,6 +299,9 @@
     .video-note {
       margin-top: 0.75rem;
       font-size: 0.95rem;
+      color: var(--sea-deep);
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(255, 248, 238, 0.8);
     }
 
     .press ul {
@@ -267,11 +342,14 @@
 
     footer {
       margin-top: 3rem;
-      padding-top: 2rem;
+      padding: 1.25rem 1rem 0;
       border-top: 1px dashed rgba(15, 118, 110, 0.25);
       text-align: center;
       font-size: 0.9rem;
-      color: var(--sea);
+      color: var(--sea-deep);
+      background: rgba(255, 248, 238, 0.78);
+      border-radius: 1rem;
+      box-shadow: 0 4px 24px var(--shadow);
     }
 
     footer a {
@@ -280,6 +358,13 @@
   </style>
 </head>
 <body>
+  <div class="epk-bg" aria-hidden="true">
+    <div class="epk-bg-slide"></div>
+    <div class="epk-bg-slide"></div>
+    <div class="epk-bg-slide"></div>
+  </div>
+  <div class="epk-bg-overlay" aria-hidden="true"></div>
+
   <header class="site">
     <div class="inner">
       <div class="brand">The <span>Pearls</span></div>
@@ -293,10 +378,6 @@
       </nav>
     </div>
   </header>
-
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
-    <path fill="currentColor" d="M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z"/>
-  </svg>
 
   <main class="wrap">
     <div class="hero">
@@ -320,7 +401,7 @@
 
     <section id="video">
       <h2>Video</h2>
-      <p>Official and live clips — watch below or open any video on YouTube from the player menu.</p>
+      <p class="section-intro">Official and live clips — watch below or open any video on YouTube from the player menu.</p>
       <div class="video-grid">
         <div>
           <div class="video-box">
