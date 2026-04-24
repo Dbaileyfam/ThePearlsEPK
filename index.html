@@ -446,8 +446,21 @@
       font-weight: 700;
       color: var(--sea-deep);
       max-width: 36rem;
-      margin: 0 auto 1rem;
+      margin: 0 auto;
       text-shadow: 0 0 18px rgba(255, 248, 238, 0.85);
+    }
+
+    .hero .hero-taggroup {
+      max-width: 36rem;
+      margin: 0 auto 1rem;
+    }
+
+    .hero .hero-taggroup .tag {
+      max-width: 100%;
+    }
+
+    .hero .hero-taggroup .tag + .tag {
+      margin-top: 0.35rem;
     }
 
     .hero .lede {
@@ -458,17 +471,6 @@
       line-height: 1.58;
       opacity: 0.98;
       text-shadow: 0 0 14px rgba(255, 248, 238, 0.75);
-    }
-
-    .hero .hero-locale {
-      font-family: var(--font-epk);
-      font-size: clamp(1rem, 2.4vw, 1.15rem);
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--sea-deep);
-      margin: 1rem auto 0;
-      opacity: 0.94;
-      text-shadow: 0 0 12px rgba(255, 248, 238, 0.7);
     }
 
     section {
@@ -766,9 +768,11 @@
         <img class="hero-logo-img" src="assets/logo-official.png" width="480" height="480" alt="The Pearls — official circular logo" decoding="async" fetchpriority="high">
       </div>
       <h1>Electronic Press Kit</h1>
-      <p class="tag">Indie to alt-rock · good vibes, big energy</p>
+      <div class="hero-taggroup">
+        <p class="tag">Indie to alt-rock · good vibes, big energy</p>
+        <p class="tag">Casper, WY</p>
+      </div>
       <p class="lede">A genre-bending crew with a surfer’s sense of space and a rock show’s pulse: love, sadness, passion, and straight-up fun — played all over Wyoming and built for rooms that want to move.</p>
-      <p class="hero-locale">Casper, WY</p>
     </div>
 
     <section id="bio">
