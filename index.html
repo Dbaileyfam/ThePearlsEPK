@@ -122,7 +122,7 @@
     .wrap {
       max-width: 52rem;
       margin: 0 auto;
-      padding: 0 1.25rem 4rem;
+      padding: 0 1.25rem max(6.5rem, calc(3.5rem + env(safe-area-inset-bottom, 0px)));
       position: relative;
       z-index: 2;
     }
@@ -206,8 +206,7 @@
       filter: drop-shadow(0 6px 20px rgba(13, 79, 74, 0.2)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
     }
 
-    /* Round pearl orbs (perfect circles) */
-    .btn-pearl,
+    /* Round pearl orbs (floating social links) */
     .social a {
       box-sizing: border-box;
       display: inline-flex;
@@ -253,7 +252,6 @@
       opacity: 0.9;
     }
 
-    .btn-pearl:hover,
     .social a:hover {
       color: var(--sea-deep) !important;
       filter: saturate(1.1) brightness(1.04);
@@ -265,20 +263,18 @@
         0 12px 28px rgba(251, 113, 133, 0.2);
     }
 
-    .btn-pearl:focus-visible,
     .social a:focus-visible {
       outline: 2px solid var(--sea);
       outline-offset: 4px;
     }
 
-    .btn-pearl--footer {
-      width: 6.35rem;
-      height: 6.35rem;
-      font-size: 0.68rem;
-    }
-
     .footer-site {
       margin: 0.75rem 0 0;
+    }
+
+    .footer-share-link {
+      font-weight: 700;
+      font-size: 1rem;
     }
 
     .footer-url-note {
@@ -553,19 +549,54 @@
       word-break: break-all;
     }
 
-    .social-label {
+    .booking-links {
       margin: 1rem 0 0;
       font-size: 0.95rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--sea-deep);
+      line-height: 1.6;
     }
 
-    .social {
-      margin-top: 0.5rem;
+    .booking-links a {
+      font-weight: 700;
+    }
+
+    /* Floating pearl links (outside cards) */
+    .floating-social {
+      position: fixed;
+      right: max(0.65rem, env(safe-area-inset-right));
+      bottom: max(1rem, env(safe-area-inset-bottom));
+      z-index: 35;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: center;
-      gap: 0.85rem 1rem;
+      gap: 0.65rem;
+      pointer-events: none;
+    }
+
+    .floating-social .social {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 0.65rem;
+      pointer-events: auto;
+      filter: drop-shadow(0 10px 22px rgba(13, 79, 74, 0.2)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+    }
+
+    .floating-social .social a {
+      width: 5.35rem;
+      height: 5.35rem;
+      font-size: 0.58rem;
+    }
+
+    @media (min-width: 900px) {
+      .floating-social .social a {
+        width: 5.65rem;
+        height: 5.65rem;
+        font-size: 0.6rem;
+      }
     }
 
     footer {
@@ -725,24 +756,28 @@
       <div class="card booking">
         <p>Shows, private events, festivals, and press inquiries:</p>
         <p class="email"><a href="mailto:therealpearls01@gmail.com">therealpearls01@gmail.com</a></p>
-        <p class="social-label">Social &amp; links</p>
-        <div class="social">
-          <a href="https://instagram.com/onlythepearls" target="_blank" rel="noopener noreferrer" title="The Pearls on Instagram">Instagram</a>
-          <a href="https://www.facebook.com/profile.php?id=61582393114300" target="_blank" rel="noopener noreferrer" title="The Pearls on Facebook">Facebook</a>
-          <a href="https://distrokid.com/hyperfollow/thepearls/dreams/" target="_blank" rel="noopener noreferrer" title="Dreams by The Pearls — Spotify, Apple Music, and more"><span class="pearl-stack">Dreams<span class="pearl-sub">DistroKid</span></span></a>
-        </div>
+        <p class="booking-links"><a href="https://instagram.com/onlythepearls" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61582393114300" target="_blank" rel="noopener noreferrer">Facebook</a> · <a href="https://distrokid.com/hyperfollow/thepearls/dreams/" target="_blank" rel="noopener noreferrer">DistroKid (Dreams)</a></p>
       </div>
     </section>
 
     <footer>
       <p>© <span id="y"></span> The Pearls · Casper, Wyoming</p>
       <p class="footer-site">
-        <a class="btn-pearl btn-pearl--footer" href="https://dbaileyfam.github.io/ThePearlsEPK/" rel="bookmark" title="Share this Electronic Press Kit"><span class="pearl-stack">This EPK<span class="pearl-sub">share link</span></span></a>
+        <a class="footer-share-link" href="https://dbaileyfam.github.io/ThePearlsEPK/" rel="bookmark" title="Share this Electronic Press Kit">Share this EPK</a>
       </p>
       <p class="footer-url-note"><a href="https://dbaileyfam.github.io/ThePearlsEPK/">https://dbaileyfam.github.io/ThePearlsEPK/</a></p>
       <p><a href="https://github.com/Dbaileyfam/ThePearlsEPK">Site repo on GitHub</a> — deploy with GitHub Pages from the <code>main</code> branch.</p>
     </footer>
   </main>
+
+  <aside class="floating-social" aria-label="Social quick links">
+    <div class="social">
+      <a href="https://instagram.com/onlythepearls" target="_blank" rel="noopener noreferrer" title="The Pearls on Instagram">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61582393114300" target="_blank" rel="noopener noreferrer" title="The Pearls on Facebook">Facebook</a>
+      <a href="https://distrokid.com/hyperfollow/thepearls/dreams/" target="_blank" rel="noopener noreferrer" title="Dreams by The Pearls — Spotify, Apple Music, and more"><span class="pearl-stack">Dreams<span class="pearl-sub">DistroKid</span></span></a>
+    </div>
+  </aside>
+
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
