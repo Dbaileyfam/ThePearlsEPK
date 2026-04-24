@@ -6,8 +6,8 @@
   <title>Electronic Press Kit — The Pearls</title>
   <meta name="description" content="The Pearls — genre-bending indie and alternative rock from Casper, Wyoming. EPK for press and booking.">
   <link rel="canonical" href="https://dbaileyfam.github.io/ThePearlsEPK/">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="icon" href="assets/logo-official.png" type="image/png" sizes="any">
+  <link rel="apple-touch-icon" href="assets/logo-official.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -146,35 +146,62 @@
       gap: 0.75rem;
     }
 
-    .brand {
-      font-family: "Fraunces", Georgia, serif;
-      font-weight: 700;
-      font-size: 1.35rem;
-      letter-spacing: -0.02em;
-      color: var(--sea-deep);
-    }
-
-    a.brand-link.brand {
+    /* Official band logo — header corner */
+    .brand-logo-link {
       display: inline-block;
-      text-decoration: none;
-      color: inherit;
-      border-radius: 0.4rem;
-      outline-offset: 3px;
+      line-height: 0;
+      border-radius: 50%;
+      outline-offset: 4px;
+      box-shadow:
+        0 2px 8px rgba(13, 79, 74, 0.12),
+        0 4px 20px rgba(251, 113, 133, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
     }
 
-    a.brand-link.brand:hover {
-      color: inherit;
+    .brand-logo-link:hover {
+      transform: scale(1.04);
+      filter: saturate(1.05);
+      box-shadow:
+        0 4px 14px rgba(13, 79, 74, 0.14),
+        0 8px 28px rgba(251, 113, 133, 0.18);
     }
 
-    a.brand-link.brand:hover span,
-    a.brand-link.brand:focus-visible span {
-      color: #e11d48;
+    .brand-logo-link:focus-visible {
+      outline: 2px solid var(--sea);
     }
 
-    .brand span {
-      font-style: italic;
-      font-weight: 500;
-      color: var(--coral);
+    .brand-logo-img {
+      display: block;
+      width: 3.35rem;
+      height: 3.35rem;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    @media (min-width: 480px) {
+      .brand-logo-img {
+        width: 3.65rem;
+        height: 3.65rem;
+      }
+    }
+
+    /* Hero focal logo under page title */
+    .hero-logo-focal {
+      margin: 0.75rem auto 1.15rem;
+      max-width: min(16.5rem, 78vw);
+      padding: 0.35rem;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 35%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 248, 238, 0.25) 45%, transparent 70%);
+    }
+
+    .hero-logo-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: drop-shadow(0 6px 20px rgba(13, 79, 74, 0.2)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
     }
 
     /* Round pearl orbs (perfect circles) */
@@ -289,7 +316,7 @@
 
     .hero {
       text-align: center;
-      padding: 2.5rem 0 1rem;
+      padding: 2rem 0 1rem;
     }
 
     .hero h1 {
@@ -581,7 +608,9 @@
 
   <header class="site">
     <div class="inner">
-      <a href="./" class="brand brand-link" aria-label="The Pearls — Electronic Press Kit (top of page)">The <span>Pearls</span></a>
+      <a href="./" class="brand-logo-link" aria-label="The Pearls — Electronic Press Kit (top of page)">
+        <img class="brand-logo-img" src="assets/logo-official.png" width="58" height="58" alt="The Pearls — official logo" decoding="async">
+      </a>
       <nav aria-label="EPK sections">
         <ul>
           <li><a href="#bio">Bio</a></li>
@@ -597,6 +626,9 @@
   <main class="wrap">
     <div class="hero">
       <h1>Electronic Press Kit</h1>
+      <div class="hero-logo-focal">
+        <img class="hero-logo-img" src="assets/logo-official.png" width="480" height="480" alt="The Pearls — official circular logo" decoding="async" fetchpriority="high">
+      </div>
       <p class="tag">The Pearls — Casper, WY · indie to alt-rock · good vibes, big energy</p>
       <p class="lede">A genre-bending crew with a surfer’s sense of space and a rock show’s pulse: love, sadness, passion, and straight-up fun — played all over Wyoming and built for rooms that want to move.</p>
       <div class="pill-row">
@@ -695,10 +727,10 @@
           <figcaption>Promo art — wave <span>Square crop</span></figcaption>
         </figure>
         <figure class="press-photo">
-          <a href="assets/press/press-logo-circle.png" target="_blank" rel="noopener noreferrer">
-            <img src="assets/press/press-logo-circle.png" width="480" height="480" loading="lazy" alt="The Pearls circular vintage surf-style logo">
+          <a href="assets/logo-official.png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/logo-official.png" width="480" height="480" loading="lazy" alt="The Pearls official circular logo">
           </a>
-          <figcaption>Logo — circular mark <span>Square crop</span></figcaption>
+          <figcaption>Official logo <span>High-res download</span></figcaption>
         </figure>
       </div>
       <div class="card press">
