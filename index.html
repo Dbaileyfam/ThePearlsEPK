@@ -207,7 +207,7 @@
       filter: drop-shadow(0 6px 20px rgba(13, 79, 74, 0.2)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
     }
 
-    /* Round pearl orbs — strong 3D sphere (avoid parent filter; it flattens inset shadows) */
+    /* Pearl orbs: warm ivory sphere + lustre layer (skin) under label */
     .social a {
       box-sizing: border-box;
       position: relative;
@@ -226,35 +226,69 @@
       text-decoration: none !important;
       hyphens: auto;
       overflow-wrap: break-word;
-      color: #0a3d3a !important;
-      text-shadow:
-        0 1px 0 rgba(255, 255, 255, 1),
-        0 2px 4px rgba(255, 255, 255, 0.55),
-        0 -1px 2px rgba(0, 0, 0, 0.12);
-      background-color: #d9d4d0;
-      background-image:
-        radial-gradient(circle at 24% 18%, #ffffff 0%, rgba(255, 255, 255, 0.9) 4%, transparent 14%),
-        radial-gradient(circle at 30% 32%, rgba(255, 255, 255, 0.65) 0%, transparent 32%),
-        radial-gradient(ellipse 125% 100% at 52% 118%, rgba(25, 45, 48, 0.45) 0%, transparent 52%),
-        radial-gradient(circle at 82% 22%, rgba(120, 210, 198, 0.55) 0%, transparent 24%),
-        radial-gradient(circle at 10% 85%, rgba(255, 170, 190, 0.35) 0%, transparent 38%),
-        radial-gradient(circle at 78% 82%, rgba(0, 40, 38, 0.28) 0%, transparent 42%),
-        linear-gradient(165deg, #fffefa 0%, #ebe6e2 22%, #d5d9dc 48%, #c9c4c8 72%, #e8e4e2 100%);
-      border: 2px solid rgba(255, 255, 255, 0.75);
+      overflow: hidden;
+      color: #2f3d3c !important;
+      border: 1px solid rgba(255, 252, 248, 0.95);
+      background: transparent;
       box-shadow:
-        inset 14px 18px 28px rgba(255, 255, 255, 0.95),
-        inset -16px -24px 36px rgba(20, 35, 40, 0.38),
-        inset -4px -10px 20px rgba(0, 0, 0, 0.15),
-        inset 4px 6px 12px rgba(255, 255, 255, 0.65),
-        0 0 0 1px rgba(255, 255, 255, 0.35),
-        0 6px 14px rgba(0, 0, 0, 0.18),
-        0 16px 28px rgba(13, 79, 74, 0.22);
+        0 10px 22px rgba(55, 48, 58, 0.12),
+        0 3px 8px rgba(255, 255, 255, 0.35) inset;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .social a .pearl-skin {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      background-color: #f4e9e0;
+      background-image:
+        radial-gradient(circle at 27% 21%, #ffffff 0%, rgba(255, 255, 255, 0.55) 4%, transparent 14%),
+        radial-gradient(circle at 34% 34%, rgba(255, 255, 255, 0.45) 0%, transparent 40%),
+        radial-gradient(ellipse 118% 88% at 50% 108%, rgba(120, 95, 100, 0.1) 0%, transparent 48%),
+        radial-gradient(circle at 86% 26%, rgba(165, 218, 208, 0.42) 0%, transparent 22%),
+        radial-gradient(circle at 10% 76%, rgba(255, 195, 205, 0.38) 0%, transparent 28%),
+        radial-gradient(circle at 82% 84%, rgba(130, 120, 125, 0.07) 0%, transparent 38%),
+        linear-gradient(152deg, #fffdfb 0%, #f7ebe3 32%, #e9ddd4 58%, #f3ebe6 100%);
+      box-shadow:
+        inset 20px 26px 34px rgba(255, 255, 255, 0.78),
+        inset -12px -18px 26px rgba(110, 92, 98, 0.1),
+        inset -3px -8px 14px rgba(95, 80, 88, 0.06),
+        inset 2px 3px 0 rgba(255, 255, 255, 0.85);
+    }
+
+    .social a .pearl-skin::after {
+      content: "";
+      position: absolute;
+      left: 16%;
+      top: 9%;
+      width: 48%;
+      height: 26%;
+      border-radius: 50%;
+      transform: rotate(-36deg);
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.75) 0%, transparent 72%);
+      mix-blend-mode: soft-light;
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .social a .pearl-words {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 88%;
+      text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.95),
+        0 2px 6px rgba(255, 255, 255, 0.45);
     }
 
     .pearl-stack {
       display: block;
       max-width: 100%;
+      text-align: center;
     }
 
     .pearl-stack .pearl-sub {
@@ -262,20 +296,24 @@
       margin-top: 0.15em;
       font-weight: 600;
       font-size: 0.88em;
-      opacity: 0.9;
+      opacity: 0.92;
     }
 
     .social a:hover {
-      color: #083330 !important;
-      transform: translateY(-4px) scale(1.05);
+      color: #243332 !important;
+      transform: translateY(-3px) scale(1.04);
       box-shadow:
-        inset 16px 22px 34px rgba(255, 255, 255, 1),
-        inset -18px -28px 40px rgba(15, 30, 35, 0.42),
-        inset -6px -14px 24px rgba(0, 0, 0, 0.18),
-        inset 5px 8px 14px rgba(255, 255, 255, 0.7),
-        0 0 0 1px rgba(255, 255, 255, 0.45),
-        0 10px 22px rgba(0, 0, 0, 0.22),
-        0 22px 40px rgba(13, 79, 74, 0.28);
+        0 14px 30px rgba(55, 48, 58, 0.16),
+        0 4px 10px rgba(255, 255, 255, 0.45) inset;
+    }
+
+    .social a:hover .pearl-skin {
+      filter: brightness(1.04) saturate(1.06);
+      box-shadow:
+        inset 22px 30px 38px rgba(255, 255, 255, 0.88),
+        inset -14px -20px 30px rgba(110, 92, 98, 0.11),
+        inset -4px -10px 16px rgba(95, 80, 88, 0.07),
+        inset 2px 4px 0 rgba(255, 255, 255, 0.9);
     }
 
     .social a:focus-visible {
@@ -775,10 +813,22 @@
 
     <aside class="between-boxes-social" aria-label="Social quick links">
       <div class="social">
-        <a href="https://instagram.com/onlythepearls" target="_blank" rel="noopener noreferrer" title="The Pearls on Instagram">Instagram</a>
-        <a href="https://www.facebook.com/profile.php?id=61582393114300" target="_blank" rel="noopener noreferrer" title="The Pearls on Facebook">Facebook</a>
-        <a href="https://music.apple.com/us/artist/the-pearls/1823131277" target="_blank" rel="noopener noreferrer" title="The Pearls on Apple Music"><span class="pearl-stack">Apple<span class="pearl-sub">Music</span></span></a>
-        <a href="https://distrokid.com/hyperfollow/thepearls/dreams/" target="_blank" rel="noopener noreferrer" title="Dreams by The Pearls — Spotify, Apple Music, and more"><span class="pearl-stack">Dreams<span class="pearl-sub">DistroKid</span></span></a>
+        <a href="https://instagram.com/onlythepearls" target="_blank" rel="noopener noreferrer" title="The Pearls on Instagram">
+          <span class="pearl-skin" aria-hidden="true"></span>
+          <span class="pearl-words">Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61582393114300" target="_blank" rel="noopener noreferrer" title="The Pearls on Facebook">
+          <span class="pearl-skin" aria-hidden="true"></span>
+          <span class="pearl-words">Facebook</span>
+        </a>
+        <a href="https://music.apple.com/us/artist/the-pearls/1823131277" target="_blank" rel="noopener noreferrer" title="The Pearls on Apple Music">
+          <span class="pearl-skin" aria-hidden="true"></span>
+          <span class="pearl-words"><span class="pearl-stack">Apple<span class="pearl-sub">Music</span></span></span>
+        </a>
+        <a href="https://distrokid.com/hyperfollow/thepearls/dreams/" target="_blank" rel="noopener noreferrer" title="Dreams by The Pearls — Spotify, Apple Music, and more">
+          <span class="pearl-skin" aria-hidden="true"></span>
+          <span class="pearl-words"><span class="pearl-stack">Dreams<span class="pearl-sub">DistroKid</span></span></span>
+        </a>
       </div>
     </aside>
 
