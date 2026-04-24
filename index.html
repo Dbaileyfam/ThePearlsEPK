@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="assets/logo-official.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --sand: #fff8ee;
@@ -22,6 +22,7 @@
       --ink: #134e4a;
       --white: #ffffff;
       --shadow: rgba(13, 79, 74, 0.12);
+      --font-epk: "Fredoka", system-ui, -apple-system, sans-serif;
     }
 
     * {
@@ -34,8 +35,9 @@
 
     body {
       margin: 0;
-      font-family: "Nunito", system-ui, sans-serif;
+      font-family: var(--font-epk);
       font-size: 1.05rem;
+      font-weight: 400;
       line-height: 1.65;
       color: var(--ink);
       background: #0c2a28;
@@ -301,8 +303,9 @@
     }
 
     nav a {
+      font-family: var(--font-epk);
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       text-decoration: none;
       color: var(--sea-deep);
       padding: 0.35rem 0;
@@ -320,10 +323,10 @@
     }
 
     .hero h1 {
-      font-family: "Fraunces", Georgia, serif;
+      font-family: var(--font-epk);
       font-size: clamp(0.95rem, 2.6vw, 1.15rem);
       font-weight: 600;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.06em;
       color: var(--sea-deep);
       margin: 0.2rem auto 0.85rem;
       max-width: 22rem;
@@ -332,6 +335,7 @@
     }
 
     .hero .tag {
+      font-family: var(--font-epk);
       font-size: 1.15rem;
       font-weight: 600;
       color: var(--sea-deep);
@@ -352,8 +356,10 @@
     }
 
     section h2 {
-      font-family: "Fraunces", Georgia, serif;
+      font-family: var(--font-epk);
       font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
       color: var(--sea-deep);
       margin: 0 0 1rem;
       padding-bottom: 0.35rem;
