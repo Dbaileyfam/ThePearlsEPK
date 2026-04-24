@@ -177,54 +177,79 @@
       color: var(--coral);
     }
 
-    /* Mother-of-pearl pill buttons */
+    /* Round pearl orbs (perfect circles) */
     .btn-pearl,
     .social a {
-      display: inline-block;
+      box-sizing: border-box;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 5.85rem;
+      height: 5.85rem;
+      padding: 0.4rem;
+      border-radius: 50%;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.62rem;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+      text-align: center;
       text-decoration: none !important;
-      padding: 0.55rem 1.15rem;
-      border-radius: 999px;
+      hyphens: auto;
+      overflow-wrap: break-word;
       color: var(--sea-deep) !important;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
       background:
-        radial-gradient(ellipse 100% 80% at 30% 18%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 45%),
-        linear-gradient(148deg, #fffefb 0%, #f3ebe6 14%, #dcefe9 38%, #f5d4dc 68%, #bfe8df 100%);
-      border: 1px solid rgba(255, 255, 255, 0.95);
+        radial-gradient(circle at 30% 26%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.35) 18%, transparent 38%),
+        radial-gradient(circle at 72% 78%, rgba(12, 74, 68, 0.2) 0%, transparent 42%),
+        linear-gradient(152deg, #fffefb 0%, #ebe4df 12%, #d4ebe6 40%, #efd6dd 68%, #a8ddd4 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.98);
       box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.85),
-        inset 0 -0.12em 0.45em rgba(15, 118, 110, 0.1),
-        0 2px 4px rgba(13, 79, 74, 0.06),
-        0 6px 20px rgba(251, 113, 133, 0.12);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+        inset 0.12em 0.15em 0.25em rgba(255, 255, 255, 0.9),
+        inset -0.15em -0.2em 0.45em rgba(15, 118, 110, 0.14),
+        0 3px 8px rgba(13, 79, 74, 0.1),
+        0 8px 22px rgba(251, 113, 133, 0.15);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    }
+
+    .pearl-stack {
+      display: block;
+      max-width: 100%;
+    }
+
+    .pearl-stack .pearl-sub {
+      display: block;
+      margin-top: 0.15em;
+      font-weight: 600;
+      font-size: 0.88em;
+      opacity: 0.9;
     }
 
     .btn-pearl:hover,
     .social a:hover {
       color: var(--sea-deep) !important;
-      filter: saturate(1.08) brightness(1.03);
-      transform: translateY(-1px);
+      filter: saturate(1.1) brightness(1.04);
+      transform: translateY(-2px) scale(1.03);
       box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.9),
-        inset 0 -0.12em 0.45em rgba(15, 118, 110, 0.08),
-        0 3px 8px rgba(13, 79, 74, 0.08),
-        0 8px 26px rgba(251, 113, 133, 0.18);
+        inset 0.12em 0.15em 0.3em rgba(255, 255, 255, 0.95),
+        inset -0.12em -0.18em 0.4em rgba(15, 118, 110, 0.1),
+        0 5px 14px rgba(13, 79, 74, 0.12),
+        0 12px 28px rgba(251, 113, 133, 0.2);
     }
 
     .btn-pearl:focus-visible,
     .social a:focus-visible {
       outline: 2px solid var(--sea);
-      outline-offset: 3px;
+      outline-offset: 4px;
+    }
+
+    .btn-pearl--footer {
+      width: 6.35rem;
+      height: 6.35rem;
+      font-size: 0.68rem;
     }
 
     .footer-site {
       margin: 0.75rem 0 0;
-    }
-
-    .footer-site .btn-pearl {
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem;
     }
 
     .footer-url-note {
@@ -525,7 +550,8 @@
       margin-top: 0.5rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem 0.75rem;
+      align-items: center;
+      gap: 0.85rem 1rem;
     }
 
     footer {
@@ -687,9 +713,9 @@
         <p class="email"><a href="mailto:therealpearls01@gmail.com">therealpearls01@gmail.com</a></p>
         <p class="social-label">Social &amp; links</p>
         <div class="social">
-          <a href="https://instagram.com/onlythepearls" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.facebook.com/profile.php?id=61582393114300" target="_blank" rel="noopener noreferrer">Facebook</a>
-          <a href="https://distrokid.com/hyperfollow/thepearls/dreams/" target="_blank" rel="noopener noreferrer">Dreams — DistroKid</a>
+          <a href="https://instagram.com/onlythepearls" target="_blank" rel="noopener noreferrer" title="The Pearls on Instagram">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61582393114300" target="_blank" rel="noopener noreferrer" title="The Pearls on Facebook">Facebook</a>
+          <a href="https://distrokid.com/hyperfollow/thepearls/dreams/" target="_blank" rel="noopener noreferrer" title="Dreams by The Pearls — Spotify, Apple Music, and more"><span class="pearl-stack">Dreams<span class="pearl-sub">DistroKid</span></span></a>
         </div>
       </div>
     </section>
@@ -697,7 +723,7 @@
     <footer>
       <p>© <span id="y"></span> The Pearls · Casper, Wyoming</p>
       <p class="footer-site">
-        <a class="btn-pearl" href="https://dbaileyfam.github.io/ThePearlsEPK/" rel="bookmark">This EPK (share link)</a>
+        <a class="btn-pearl btn-pearl--footer" href="https://dbaileyfam.github.io/ThePearlsEPK/" rel="bookmark" title="Share this Electronic Press Kit"><span class="pearl-stack">This EPK<span class="pearl-sub">share link</span></span></a>
       </p>
       <p class="footer-url-note"><a href="https://dbaileyfam.github.io/ThePearlsEPK/">https://dbaileyfam.github.io/ThePearlsEPK/</a></p>
       <p><a href="https://github.com/Dbaileyfam/ThePearlsEPK">Site repo on GitHub</a> — deploy with GitHub Pages from the <code>main</code> branch.</p>
