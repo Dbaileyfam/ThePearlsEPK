@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Electronic Press Kit — The Pearls</title>
   <meta name="description" content="The Pearls — genre-bending indie and alternative rock from Casper, Wyoming. EPK for press and booking.">
+  <link rel="canonical" href="https://dbaileyfam.github.io/ThePearlsEPK/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -151,10 +154,89 @@
       color: var(--sea-deep);
     }
 
+    a.brand-link.brand {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 0.4rem;
+      outline-offset: 3px;
+    }
+
+    a.brand-link.brand:hover {
+      color: inherit;
+    }
+
+    a.brand-link.brand:hover span,
+    a.brand-link.brand:focus-visible span {
+      color: #e11d48;
+    }
+
     .brand span {
       font-style: italic;
       font-weight: 500;
       color: var(--coral);
+    }
+
+    /* Mother-of-pearl pill buttons */
+    .btn-pearl,
+    .social a {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      padding: 0.55rem 1.15rem;
+      border-radius: 999px;
+      color: var(--sea-deep) !important;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      background:
+        radial-gradient(ellipse 100% 80% at 30% 18%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 45%),
+        linear-gradient(148deg, #fffefb 0%, #f3ebe6 14%, #dcefe9 38%, #f5d4dc 68%, #bfe8df 100%);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.85),
+        inset 0 -0.12em 0.45em rgba(15, 118, 110, 0.1),
+        0 2px 4px rgba(13, 79, 74, 0.06),
+        0 6px 20px rgba(251, 113, 133, 0.12);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    }
+
+    .btn-pearl:hover,
+    .social a:hover {
+      color: var(--sea-deep) !important;
+      filter: saturate(1.08) brightness(1.03);
+      transform: translateY(-1px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        inset 0 -0.12em 0.45em rgba(15, 118, 110, 0.08),
+        0 3px 8px rgba(13, 79, 74, 0.08),
+        0 8px 26px rgba(251, 113, 133, 0.18);
+    }
+
+    .btn-pearl:focus-visible,
+    .social a:focus-visible {
+      outline: 2px solid var(--sea);
+      outline-offset: 3px;
+    }
+
+    .footer-site {
+      margin: 0.75rem 0 0;
+    }
+
+    .footer-site .btn-pearl {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .footer-url-note {
+      margin: 0.5rem 0 0;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      word-break: break-all;
+    }
+
+    .footer-url-note a {
+      color: var(--sea-deep);
+      font-weight: 600;
     }
 
     nav ul {
@@ -446,22 +528,6 @@
       gap: 0.5rem 0.75rem;
     }
 
-    .social a {
-      display: inline-block;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 0.5rem 0.9rem;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--sea), var(--sea-deep));
-      color: var(--white) !important;
-      box-shadow: 0 4px 14px rgba(15, 118, 110, 0.35);
-    }
-
-    .social a:hover {
-      filter: brightness(1.08);
-      color: var(--white) !important;
-    }
-
     footer {
       margin-top: 3rem;
       padding: 1.25rem 1rem 0;
@@ -489,7 +555,7 @@
 
   <header class="site">
     <div class="inner">
-      <div class="brand">The <span>Pearls</span></div>
+      <a href="./" class="brand brand-link" aria-label="The Pearls — Electronic Press Kit (top of page)">The <span>Pearls</span></a>
       <nav aria-label="EPK sections">
         <ul>
           <li><a href="#bio">Bio</a></li>
@@ -630,6 +696,10 @@
 
     <footer>
       <p>© <span id="y"></span> The Pearls · Casper, Wyoming</p>
+      <p class="footer-site">
+        <a class="btn-pearl" href="https://dbaileyfam.github.io/ThePearlsEPK/" rel="bookmark">This EPK (share link)</a>
+      </p>
+      <p class="footer-url-note"><a href="https://dbaileyfam.github.io/ThePearlsEPK/">https://dbaileyfam.github.io/ThePearlsEPK/</a></p>
       <p><a href="https://github.com/Dbaileyfam/ThePearlsEPK">Site repo on GitHub</a> — deploy with GitHub Pages from the <code>main</code> branch.</p>
     </footer>
   </main>
