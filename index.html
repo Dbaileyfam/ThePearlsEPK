@@ -913,13 +913,56 @@
     <footer>
       <p>© <span id="y"></span> The Pearls · Casper, Wyoming</p>
       <p class="footer-site">
-        <a class="footer-share-link" href="https://dbaileyfam.github.io/ThePearlsEPK/" rel="bookmark" title="Share this Electronic Press Kit">Share this EPK</a>
+        <a id="share-epk-link" class="footer-share-link" href="https://dbaileyfam.github.io/ThePearlsEPK/" rel="bookmark" title="Copy this Electronic Press Kit link">Share this EPK</a>
       </p>
     </footer>
   </main>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    const shareLink = document.getElementById("share-epk-link");
+    if (shareLink) {
+      const shareUrl = shareLink.href;
+      const originalText = shareLink.textContent;
+
+      const showShareStatus = (message) => {
+        shareLink.textContent = message;
+        window.setTimeout(() => {
+          shareLink.textContent = originalText;
+        }, 1500);
+      };
+
+      const fallbackCopyText = (text) => {
+        const helper = document.createElement("textarea");
+        helper.value = text;
+        helper.setAttribute("readonly", "");
+        helper.style.position = "fixed";
+        helper.style.opacity = "0";
+        document.body.appendChild(helper);
+        helper.select();
+        const copied = document.execCommand("copy");
+        document.body.removeChild(helper);
+        return copied;
+      };
+
+      shareLink.addEventListener("click", async (event) => {
+        event.preventDefault();
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+          } else if (!fallbackCopyText(shareUrl)) {
+            throw new Error("Clipboard copy failed");
+          }
+          showShareStatus("Copied!");
+        } catch (error) {
+          showShareStatus("Copy failed");
+          window.setTimeout(() => {
+            window.location.href = shareUrl;
+          }, 350);
+        }
+      });
+    }
   </script>
 </body>
 </html>
