@@ -416,39 +416,8 @@
     .events-grid {
       display: grid;
       gap: 1.2rem;
-    }
-
-    @media (min-width: 760px) {
-      .events-grid {
-        grid-template-columns: 1.05fr 0.95fr;
-        align-items: start;
-      }
-    }
-
-    .event-card h3 {
-      margin: 0 0 0.35rem;
-      font-size: 1.35rem;
-      color: var(--sea-deep);
-    }
-
-    .event-meta {
-      margin: 0 0 0.85rem;
-      font-weight: 600;
-      line-height: 1.55;
-    }
-
-    .event-meta strong {
-      color: var(--sea-deep);
-    }
-
-    .event-lineup {
-      margin: 0;
-      padding-left: 1.2rem;
-      line-height: 1.65;
-    }
-
-    .event-lineup li {
-      margin-bottom: 0.25rem;
+      max-width: 44rem;
+      margin: 0 auto;
     }
 
     .event-flyer {
@@ -712,23 +681,8 @@
 
     <section id="events">
       <h2>Upcoming Events</h2>
-      <p class="section-intro">Current confirmed date for The Pearls:</p>
+      <p class="section-intro">Current confirmed date for The Pearls — flyer only.</p>
       <div class="events-grid">
-        <div class="card event-card">
-          <h3>5150' Festival 2026</h3>
-          <p class="event-meta">
-            <strong>Date:</strong> August 15, 2026<br>
-            <strong>Venue:</strong> David Street Station<br>
-            <strong>Address:</strong> 200 S David, Casper, WY<br>
-            <strong>Set time:</strong> 2:00 PM
-          </p>
-          <ul class="event-lineup">
-            <li>2:00 PM — The Pearls</li>
-            <li>4:00 PM — The Mashup</li>
-            <li>6:00 PM — Claire Wright</li>
-            <li>8:00 PM — Shwayze</li>
-          </ul>
-        </div>
         <figure class="event-flyer">
           <a href="assets/events/5150-festival-2026.png" target="_blank" rel="noopener noreferrer">
             <img src="assets/events/5150-festival-2026.png" width="768" height="982" loading="lazy" alt="5150 Festival 2026 flyer at David Street Station showing lineup and set times">
