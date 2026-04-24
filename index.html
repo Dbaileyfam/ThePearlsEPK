@@ -231,8 +231,9 @@
       border: 1px solid rgba(255, 252, 248, 0.95);
       background: transparent;
       box-shadow:
-        0 10px 22px rgba(55, 48, 58, 0.12),
-        0 3px 8px rgba(255, 255, 255, 0.35) inset;
+        0 10px 24px rgba(55, 48, 58, 0.1),
+        0 0 0 2px rgba(255, 255, 255, 0.55),
+        0 3px 10px rgba(255, 255, 255, 0.45) inset;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -241,35 +242,73 @@
       inset: 0;
       border-radius: 50%;
       pointer-events: none;
-      background-color: #f4e9e0;
+      background-color: #f6ebe4;
       background-image:
-        radial-gradient(circle at 27% 21%, #ffffff 0%, rgba(255, 255, 255, 0.55) 4%, transparent 14%),
-        radial-gradient(circle at 34% 34%, rgba(255, 255, 255, 0.45) 0%, transparent 40%),
-        radial-gradient(ellipse 118% 88% at 50% 108%, rgba(120, 95, 100, 0.1) 0%, transparent 48%),
-        radial-gradient(circle at 86% 26%, rgba(165, 218, 208, 0.42) 0%, transparent 22%),
-        radial-gradient(circle at 10% 76%, rgba(255, 195, 205, 0.38) 0%, transparent 28%),
-        radial-gradient(circle at 82% 84%, rgba(130, 120, 125, 0.07) 0%, transparent 38%),
-        linear-gradient(152deg, #fffdfb 0%, #f7ebe3 32%, #e9ddd4 58%, #f3ebe6 100%);
+        conic-gradient(
+          from 215deg at 68% 32%,
+          transparent 0deg,
+          rgba(185, 235, 215, 0.22) 55deg,
+          rgba(255, 210, 230, 0.18) 118deg,
+          rgba(210, 195, 255, 0.12) 175deg,
+          transparent 260deg
+        ),
+        radial-gradient(circle at 25% 18%, #ffffff 0%, rgba(255, 255, 255, 0.75) 3%, rgba(255, 255, 255, 0.2) 10%, transparent 18%),
+        radial-gradient(circle at 32% 30%, rgba(255, 255, 255, 0.65) 0%, transparent 36%),
+        radial-gradient(circle at 50% 50%, rgba(255, 248, 242, 0.55) 0%, transparent 55%),
+        radial-gradient(ellipse 120% 92% at 50% 112%, rgba(100, 78, 88, 0.09) 0%, transparent 46%),
+        radial-gradient(circle at 88% 24%, rgba(130, 225, 205, 0.55) 0%, transparent 20%),
+        radial-gradient(circle at 8% 72%, rgba(255, 185, 200, 0.5) 0%, transparent 26%),
+        radial-gradient(circle at 78% 82%, rgba(170, 155, 185, 0.1) 0%, transparent 34%),
+        linear-gradient(148deg, #fffefc 0%, #f8e9e4 28%, #edd8cf 52%, #e8dfd8 78%, #faf6f2 100%);
       box-shadow:
-        inset 20px 26px 34px rgba(255, 255, 255, 0.78),
-        inset -12px -18px 26px rgba(110, 92, 98, 0.1),
-        inset -3px -8px 14px rgba(95, 80, 88, 0.06),
-        inset 2px 3px 0 rgba(255, 255, 255, 0.85);
+        inset 22px 30px 38px rgba(255, 255, 255, 0.92),
+        inset -10px -16px 28px rgba(120, 95, 105, 0.09),
+        inset -2px -6px 12px rgba(90, 70, 80, 0.05),
+        inset 3px 5px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -1px 2px rgba(255, 255, 255, 0.35);
+    }
+
+    .social a .pearl-skin::before {
+      content: "";
+      position: absolute;
+      inset: 4%;
+      border-radius: 50%;
+      background: linear-gradient(
+        118deg,
+        rgba(255, 255, 255, 0) 36%,
+        rgba(255, 255, 255, 0.75) 47%,
+        rgba(255, 255, 255, 0.35) 52%,
+        rgba(255, 255, 255, 0) 62%
+      );
+      mix-blend-mode: screen;
+      opacity: 0.82;
+      pointer-events: none;
     }
 
     .social a .pearl-skin::after {
       content: "";
       position: absolute;
-      left: 16%;
-      top: 9%;
-      width: 48%;
-      height: 26%;
+      left: 14%;
+      top: 7%;
+      width: 52%;
+      height: 30%;
       border-radius: 50%;
-      transform: rotate(-36deg);
-      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.75) 0%, transparent 72%);
-      mix-blend-mode: soft-light;
-      opacity: 0.85;
+      transform: rotate(-34deg);
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.35) 35%, transparent 70%);
+      mix-blend-mode: screen;
+      opacity: 0.88;
       pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .social a .pearl-skin::after {
+        animation: pearl-glint 5.5s ease-in-out infinite;
+      }
+    }
+
+    @keyframes pearl-glint {
+      0%, 100% { opacity: 0.72; transform: rotate(-34deg) scale(1); }
+      50% { opacity: 1; transform: rotate(-32deg) scale(1.04); }
     }
 
     .social a .pearl-words {
@@ -281,8 +320,9 @@
       justify-content: center;
       max-width: 88%;
       text-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.95),
-        0 2px 6px rgba(255, 255, 255, 0.45);
+        0 1px 0 rgba(255, 255, 255, 1),
+        0 2px 8px rgba(255, 255, 255, 0.65),
+        0 0 12px rgba(255, 255, 255, 0.35);
     }
 
     .pearl-stack {
@@ -300,20 +340,26 @@
     }
 
     .social a:hover {
-      color: #243332 !important;
+      color: #1f2e2d !important;
       transform: translateY(-3px) scale(1.04);
       box-shadow:
-        0 14px 30px rgba(55, 48, 58, 0.16),
-        0 4px 10px rgba(255, 255, 255, 0.45) inset;
+        0 16px 34px rgba(55, 48, 58, 0.14),
+        0 0 0 2px rgba(255, 255, 255, 0.65),
+        0 4px 12px rgba(255, 255, 255, 0.55) inset;
     }
 
     .social a:hover .pearl-skin {
-      filter: brightness(1.04) saturate(1.06);
+      filter: brightness(1.06) saturate(1.12);
       box-shadow:
-        inset 22px 30px 38px rgba(255, 255, 255, 0.88),
-        inset -14px -20px 30px rgba(110, 92, 98, 0.11),
-        inset -4px -10px 16px rgba(95, 80, 88, 0.07),
-        inset 2px 4px 0 rgba(255, 255, 255, 0.9);
+        inset 24px 34px 44px rgba(255, 255, 255, 0.98),
+        inset -12px -18px 32px rgba(120, 95, 105, 0.08),
+        inset -3px -8px 14px rgba(90, 70, 80, 0.05),
+        inset 4px 6px 0 rgba(255, 255, 255, 1),
+        inset 0 -1px 3px rgba(255, 255, 255, 0.45);
+    }
+
+    .social a:hover .pearl-skin::before {
+      opacity: 0.95;
     }
 
     .social a:focus-visible {
