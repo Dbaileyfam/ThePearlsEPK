@@ -313,6 +313,63 @@
       margin-bottom: 0.35rem;
     }
 
+    .press-photo-grid {
+      display: grid;
+      gap: 1.1rem;
+      grid-template-columns: 1fr;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .press-photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .press-photo {
+      margin: 0;
+      border-radius: 1.1rem;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(15, 118, 110, 0.14);
+      box-shadow: 0 8px 28px var(--shadow);
+    }
+
+    .press-photo a {
+      display: block;
+      line-height: 0;
+      outline-offset: 2px;
+    }
+
+    .press-photo a:focus-visible {
+      outline: 2px solid var(--sea);
+    }
+
+    .press-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .press-photo figcaption {
+      margin: 0;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--sea-deep);
+      line-height: 1.35;
+      border-top: 1px solid rgba(15, 118, 110, 0.1);
+    }
+
+    .press-photo figcaption span {
+      display: block;
+      margin-top: 0.2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--sea);
+    }
+
     .booking .email {
       font-size: 1.15rem;
       font-weight: 700;
@@ -426,13 +483,35 @@
 
     <section id="press">
       <h2>Press photos</h2>
+      <p class="section-intro">Web-ready PNGs below — click any image to open it in a new tab, then save. Need larger or print-specific files? Email <a href="mailto:therealpearls01@gmail.com">therealpearls01@gmail.com</a>.</p>
+      <div class="press-photo-grid">
+        <figure class="press-photo">
+          <a href="assets/press/press-live-color.png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/press/press-live-color.png" width="552" height="368" loading="lazy" alt="The Pearls performing live on stage under colored lights">
+          </a>
+          <figcaption>Live — full band <span>Open in new tab for full size</span></figcaption>
+        </figure>
+        <figure class="press-photo">
+          <a href="assets/press/press-live-bw.png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/press/press-live-bw.png" width="552" height="368" loading="lazy" alt="The Pearls live on stage, black and white">
+          </a>
+          <figcaption>Live — black &amp; white <span>Open in new tab for full size</span></figcaption>
+        </figure>
+        <figure class="press-photo">
+          <a href="assets/press/press-wave-art.png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/press/press-wave-art.png" width="480" height="480" loading="lazy" alt="The Pearls illustrated artwork with wave and band name">
+          </a>
+          <figcaption>Promo art — wave <span>Square crop</span></figcaption>
+        </figure>
+        <figure class="press-photo">
+          <a href="assets/press/press-logo-circle.png" target="_blank" rel="noopener noreferrer">
+            <img src="assets/press/press-logo-circle.png" width="480" height="480" loading="lazy" alt="The Pearls circular vintage surf-style logo">
+          </a>
+          <figcaption>Logo — circular mark <span>Square crop</span></figcaption>
+        </figure>
+      </div>
       <div class="card press">
-        <p>High-resolution images for print and web are available on request. Open or save from the browser once files are hosted in this repo under <code>assets/press/</code> (add your shots there and link them here).</p>
-        <ul>
-          <li>Band live / hero</li>
-          <li>Individual members (optional)</li>
-          <li>Logos and wordmarks (optional)</li>
-        </ul>
+        <p><strong>Photo credits:</strong> Use “The Pearls” in captions when publishing. For festival one-sheets, posters, or extra-high-res requests, use the booking email above.</p>
       </div>
     </section>
 
