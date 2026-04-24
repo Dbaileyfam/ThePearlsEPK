@@ -207,7 +207,7 @@
       filter: drop-shadow(0 6px 20px rgba(13, 79, 74, 0.2)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
     }
 
-    /* Round pearl orbs — 3D sphere shading (bottom social row) */
+    /* Round pearl orbs — strong 3D sphere (avoid parent filter; it flattens inset shadows) */
     .social a {
       box-sizing: border-box;
       position: relative;
@@ -226,29 +226,30 @@
       text-decoration: none !important;
       hyphens: auto;
       overflow-wrap: break-word;
-      color: var(--sea-deep) !important;
+      color: #0a3d3a !important;
       text-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.95),
-        0 -1px 1px rgba(13, 79, 74, 0.08),
-        0 2px 3px rgba(255, 255, 255, 0.35);
-      background:
-        radial-gradient(circle at 26% 20%, #ffffff 0%, rgba(255, 255, 255, 0.55) 5%, transparent 12%),
-        radial-gradient(circle at 32% 30%, rgba(255, 255, 255, 0.75) 0%, transparent 28%),
-        radial-gradient(ellipse 130% 95% at 50% 115%, rgba(70, 95, 98, 0.22) 0%, transparent 48%),
-        radial-gradient(circle at 88% 28%, rgba(180, 220, 214, 0.45) 0%, transparent 26%),
-        radial-gradient(circle at 12% 88%, rgba(251, 200, 210, 0.22) 0%, transparent 32%),
-        radial-gradient(circle at 72% 78%, rgba(12, 74, 68, 0.12) 0%, transparent 40%),
-        linear-gradient(158deg, #fffcf9 0%, #f2ebe6 18%, #e6eef0 42%, #efe6ea 62%, #dcd8d6 88%, #f7f4f2 100%);
-      border: 1px solid rgba(255, 255, 255, 0.55);
+        0 1px 0 rgba(255, 255, 255, 1),
+        0 2px 4px rgba(255, 255, 255, 0.55),
+        0 -1px 2px rgba(0, 0, 0, 0.12);
+      background-color: #d9d4d0;
+      background-image:
+        radial-gradient(circle at 24% 18%, #ffffff 0%, rgba(255, 255, 255, 0.9) 4%, transparent 14%),
+        radial-gradient(circle at 30% 32%, rgba(255, 255, 255, 0.65) 0%, transparent 32%),
+        radial-gradient(ellipse 125% 100% at 52% 118%, rgba(25, 45, 48, 0.45) 0%, transparent 52%),
+        radial-gradient(circle at 82% 22%, rgba(120, 210, 198, 0.55) 0%, transparent 24%),
+        radial-gradient(circle at 10% 85%, rgba(255, 170, 190, 0.35) 0%, transparent 38%),
+        radial-gradient(circle at 78% 82%, rgba(0, 40, 38, 0.28) 0%, transparent 42%),
+        linear-gradient(165deg, #fffefa 0%, #ebe6e2 22%, #d5d9dc 48%, #c9c4c8 72%, #e8e4e2 100%);
+      border: 2px solid rgba(255, 255, 255, 0.75);
       box-shadow:
-        inset 10px 14px 22px rgba(255, 255, 255, 0.72),
-        inset -12px -18px 28px rgba(55, 75, 78, 0.22),
-        inset 0 -4px 10px rgba(251, 200, 210, 0.12),
-        inset 2px 3px 0 rgba(255, 255, 255, 0.55),
-        0 2px 4px rgba(0, 0, 0, 0.06),
-        0 10px 24px rgba(13, 79, 74, 0.14),
-        0 18px 40px rgba(251, 113, 133, 0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+        inset 14px 18px 28px rgba(255, 255, 255, 0.95),
+        inset -16px -24px 36px rgba(20, 35, 40, 0.38),
+        inset -4px -10px 20px rgba(0, 0, 0, 0.15),
+        inset 4px 6px 12px rgba(255, 255, 255, 0.65),
+        0 0 0 1px rgba(255, 255, 255, 0.35),
+        0 6px 14px rgba(0, 0, 0, 0.18),
+        0 16px 28px rgba(13, 79, 74, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .pearl-stack {
@@ -265,17 +266,16 @@
     }
 
     .social a:hover {
-      color: var(--sea-deep) !important;
-      filter: saturate(1.08) brightness(1.05);
-      transform: translateY(-3px) scale(1.04);
+      color: #083330 !important;
+      transform: translateY(-4px) scale(1.05);
       box-shadow:
-        inset 11px 16px 26px rgba(255, 255, 255, 0.78),
-        inset -14px -20px 32px rgba(55, 75, 78, 0.2),
-        inset 0 -4px 12px rgba(251, 200, 210, 0.14),
-        inset 2px 3px 0 rgba(255, 255, 255, 0.6),
-        0 4px 8px rgba(0, 0, 0, 0.08),
-        0 14px 32px rgba(13, 79, 74, 0.16),
-        0 22px 48px rgba(251, 113, 133, 0.14);
+        inset 16px 22px 34px rgba(255, 255, 255, 1),
+        inset -18px -28px 40px rgba(15, 30, 35, 0.42),
+        inset -6px -14px 24px rgba(0, 0, 0, 0.18),
+        inset 5px 8px 14px rgba(255, 255, 255, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.45),
+        0 10px 22px rgba(0, 0, 0, 0.22),
+        0 22px 40px rgba(13, 79, 74, 0.28);
     }
 
     .social a:focus-visible {
@@ -597,7 +597,6 @@
       align-items: center;
       justify-content: center;
       gap: 1rem 1.25rem;
-      filter: drop-shadow(0 8px 18px rgba(13, 79, 74, 0.16)) drop-shadow(0 3px 8px rgba(0, 0, 0, 0.1));
     }
 
     .between-boxes-social .social a {
